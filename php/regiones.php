@@ -7,7 +7,7 @@ function getRegiones(){
     $sql = "SELECT * FROM regiones";
     $result = mysqli_query($conn, $sql);
     $regiones = mysqli_fetch_all($result);
-    print_r($regiones);
+    return $regiones;
 }
 
 function mostrarIdRegion($nombre){

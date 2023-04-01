@@ -1,3 +1,31 @@
+const generarRegiones = () => {
+  axios
+    .get('http://localhost/prueba/php/acciones.php')
+    .then((response) => {
+      const regiones = response.data
+      const selectRegiones = document.getElementById('region')
+
+      // Agregar la opción predeterminada
+      const optionPredeterminada = document.createElement('option')
+      optionPredeterminada.value = ''
+      optionPredeterminada.innerHTML = 'Seleccione una región'
+      selectRegiones.appendChild(optionPredeterminada)
+
+      // Agregar las regiones
+      regiones.forEach((region) => {
+        const option = document.createElement('option')
+        option.value = region[0]
+        option.innerHTML = region[1]
+        selectRegiones.appendChild(option)
+      })
+    })
+    .catch((error) => {
+      console.log('Error: ' + error.message)
+    })
+}
+
+generarRegiones()
+
 const formulario = document.getElementById('formulario_voto')
 
 formulario.addEventListener('submit', (event) => {

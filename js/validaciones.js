@@ -53,7 +53,6 @@ const validarEmail = () => {
   const email = document.getElementById('txt_email').value.trim()
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ //expresión regular para validar email
 
-  console.log('wolo', email)
   //si es un email vacío
   if (email === '') {
     document.getElementById('mensaje-email').innerHTML =
