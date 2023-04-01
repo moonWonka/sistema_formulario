@@ -25,7 +25,6 @@ function getRegion($id){
     print_r($region);
 }
 
-
 function insertarRegion($region) {
     global $conn;
     $sql = "INSERT INTO regiones (nombre_region) VALUES ('$region')";

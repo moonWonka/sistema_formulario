@@ -20,11 +20,14 @@ function getVotante($id){
 function insertarVotante($nombre, $alias, $rut, $email, $id_region, $id_comuna) {
     global $conn;
     $sql = "INSERT INTO votantes (nombre_votante, alias, rut_votante, email_votante, id_region_votante, id_comuna_votante) VALUES ('$nombre', '$alias', '$rut', '$email', $id_region, $id_comuna)";
+    print($sql);
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo mysqli_affected_rows($conn) . " registro insertado: " . $nombre;
+        return true;
     } else {
         echo "Error al insertar el registro: " . mysqli_error($conn);
+        return false;
     }
 }
 
@@ -49,7 +52,5 @@ function deleteVotante($id){
         echo "Error al eliminar votante";
     }
 }
-
-deleteVotante(1);
 
 ?>
