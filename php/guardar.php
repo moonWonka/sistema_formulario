@@ -5,12 +5,14 @@ include("votantes.php");
 include("votos.php");
 
 // Extraer los valores de los datos del formulario
-$nombre = $_POST["nombre"];
-$alias = $_POST["alias"];
-$rut = $_POST["rut"];
-$email = $_POST["email"];
-$region = $_POST["region"];
-$comuna = $_POST["comuna"];
+
+
+$nombre = "muffin coxina";
+$alias = "hdgfhjfgj";
+$rut = "12345678-9";
+$email = "hjgjh";
+$region = 418;
+$comuna = 2745;
 // $candidato = $_POST["candidato"];
 
 // Insertar los datos votantes en la base de datos

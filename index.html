@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="./css/index.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Prueba Tecnica</title>
   </head>
   <body>
     <head>
-      <header></header>
+      <header>
+        <h1>Prueba Tecnica</h1>
+      </header>
     </head>
 
     <main>
@@ -16,32 +22,44 @@
         <h2>Formulario de Votacion</h2>
 
         <label for="txt_nombre">Nombre y Apellido</label>
-        <input type="text" id="txt_nombre" />
+        <input type="text" id="txt_nombre" onblur="validarNombre()" />
+        <div class="validacion" id="contenedor-nombre">
+          <p class="mensaje-validacion" id="mensaje-nombre"></p>
+        </div>
         <br />
 
         <label for="txt_alias">Alias</label>
-        <input type="text" id="txt_alias" />
+        <input type="text" id="txt_alias" onblur="validarAlias()" />
+        <div class="validacion" id="contenedor-alias">
+          <p class="mensaje-validacion" id="mensaje-alias"></p>
+        </div>
         <br />
 
         <label for="txt_rut">Rut</label>
-        <input type="text" id="txt_rut" />
+        <input type="text" id="txt_rut" onblur="validarRut()" />
+        <div class="validacion mostrar-verificacion" id="contenedor-rut">
+          <p class="mensaje-validacion" id="mensaje-rut"></p>
+        </div>
         <br />
 
         <label for="txt_email">Email</label>
-        <input type="text" id="txt_email" />
+        <input type="text" id="txt_email" onblur="validarEmail()" />
+        <div class="validacion mostrar-verificacion" id="contenedor-email">
+          <p class="mensaje-validacion" id="mensaje-email"></p>
+        </div>
         <br />
 
         <label for="region">Región:</label>
         <select name="region" id="region">
           <option value="">Seleccione una región</option>
-          <option value="id">$nombre</option>
+          <option value="418">prueba</option>
         </select>
         <br />
 
         <label for="comuna">Comuna:</label>
         <select name="comuna" id="comuna">
           <option value="">Seleccione una comuna</option>
-          <option value="comuna">$nombre_comuna</option>
+          <option value="2745">prueba comuna</option>
         </select>
         <br />
 
@@ -82,5 +100,6 @@
     </main>
 
     <script src="./js/script.js"></script>
+    <script src="./js/validaciones.js"></script>
   </body>
 </html>
