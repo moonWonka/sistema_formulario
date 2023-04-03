@@ -9,13 +9,19 @@ function getVotantes(){
     print_r($votantes);
 }
 
-function getVotante($id){
-    global $conn;
-    $sql = "SELECT * FROM votantes WHERE id_votante = $id";
-    $result = mysqli_query($conn, $sql);
-    $votante = mysqli_fetch_assoc($result);
-    print_r($votante);
-}
+    function getIdVotante($rut){
+        global $conn;
+        $sql = "SELECT id_votante FROM votantes WHERE rut_votante = '".$rut."'";
+
+
+        //print($sql);
+        $result = mysqli_query($conn, $sql);
+        $votante = mysqli_fetch_assoc($result);
+
+        echo json_encode($votante,true);
+        //print_r($votante);
+        return($votante['id_votante']);
+    }
 
 function getNombreVotante($rut){
     global $conn;
@@ -34,15 +40,14 @@ function getNombreVotante($rut){
 function insertarVotante($nombre, $alias, $rut, $email, $id_region, $id_comuna) {
     global $conn;
     $sql = "INSERT INTO votantes (nombre_votante, alias, rut_votante, email_votante, id_region_votante, id_comuna_votante) VALUES ('$nombre', '$alias', '$rut', '$email', $id_region, $id_comuna)";
-    print($sql);
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        echo mysqli_affected_rows($conn) . " registro insertado: " . $nombre;
-        return true;
-    } else {
-        echo "Error al insertar el registro: " . mysqli_error($conn);
-        return false;
-    }
+    mysqli_query($conn, $sql);
+    // if ($result) {
+    //     echo mysqli_affected_rows($conn) . " registro insertado: " . $nombre;
+    //     return true;
+    // } else {
+    //     echo "Error al insertar el registro: " . mysqli_error($conn);
+    //     return false;
+    // }
 }
 
 function updateVotante($id, $nombre, $alias, $rut, $email, $id_region, $id_comuna){
@@ -66,6 +71,9 @@ function deleteVotante($id){
         echo "Error al eliminar votante";
     }
 }
+
+
+// insertarVotante("dsds ds", "sssdsdsd5", "18.989.009-k", "w.lunah@protonmail.com", "419", "2747");
 
 // if (getNombreVotante("123456789") == ""){
 //     echo "No existe";
