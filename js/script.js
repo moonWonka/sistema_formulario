@@ -1,112 +1,100 @@
 const generarRegiones = () => {
-  axios
-    .get('http://localhost/prueba/php/acciones.php')
-    .then((response) => {
-      const regiones = response.data
-      const selectRegiones = document.getElementById('region')
+    fetch("http://localhost/prueba/php/regiones_api.php")
+        .then((response) => response.json())
+        .then((response) => {
+            const regiones = response;
+            const selectRegiones = document.getElementById("region");
 
-      // Agregar la opción predeterminada
-      const optionPredeterminada = document.createElement('option')
-      optionPredeterminada.value = ''
-      optionPredeterminada.innerHTML = 'Seleccione una región'
-      selectRegiones.appendChild(optionPredeterminada)
+            // Agregar la opción predeterminada
+            const optionPredeterminada = document.createElement("option");
+            optionPredeterminada.value = "";
+            optionPredeterminada.innerHTML = "Seleccione una región";
+            selectRegiones.appendChild(optionPredeterminada);
 
-      // Agregar las regiones
-      regiones.forEach((region) => {
-        const option = document.createElement('option')
-        option.value = region[0]
-        option.innerHTML = region[1]
-        selectRegiones.appendChild(option)
-      })
-    })
-    .catch((error) => {
-      console.log('Error: ' + error.message)
-    })
-}
+            // Agregar las regiones
+            regiones.forEach((region) => {
+                const option = document.createElement("option");
+                option.value = region[0];
+                option.innerHTML = region[1];
+                selectRegiones.appendChild(option);
+            });
+        })
+        .catch((error) => {
+            console.log("Error: " + error.message);
+        });
+};
 
-generarRegiones()
+const generarComunas = (idRegion) => {
+    fetch("http://localhost/prueba/php/comunas_api.php/?id_region=" + idRegion)
+        .then((response) => response.json())
+        .then((response) => {
+            const comunas = response;
 
-const formulario = document.getElementById('formulario_voto')
+            const selectComunas = document.getElementById("comuna");
 
-formulario.addEventListener('submit', (event) => {
-  event.preventDefault() // Evita que el formulario se envíe por defecto
+            // Eliminar las opciones anteriores
+            while (selectComunas.firstChild) {
+                selectComunas.removeChild(selectComunas.firstChild);
+            }
 
-  // Recopilar los datos del formulario
-  // const nombre = document.getElementById('txt_nombre').value
-  // const alias = document.getElementById('txt_alias').value
-  // const rut = document.getElementById('txt_rut').value
-  // const email = document.getElementById('txt_email').value
-  // const region = document.getElementById('region').value
-  // const comuna = document.getElementById('comuna').value
+            // Agregar la opción predeterminada
+            const optionPredeterminada = document.createElement("option");
+            optionPredeterminada.value = "";
+            optionPredeterminada.innerHTML = "Seleccione una comuna";
+            selectComunas.appendChild(optionPredeterminada);
 
-  // const candidato = document.getElementById('candidato').value
+            // Agregar las comunas si la respuesta contiene datos
+            if (comunas.length > 0) {
+                comunas.forEach((comuna) => {
+                    const option = document.createElement("option");
+                    option.value = comuna[0];
+                    option.innerHTML = comuna[1];
+                    selectComunas.appendChild(option);
+                });
+            }
+        });
+};
 
-  //validaciones
+const generarCandidatos = (idComuna) => {
+    fetch(
+        `http://localhost/prueba/php/candidatos_api.php/?id_comuna=${idComuna}`
+    )
+        .then((response) => response.json())
+        .then((response) => {
+            const candidatos = response;
+            const selectCandidatos = document.getElementById("candidato");
 
-  //Nombre y Apellido: No debe quedar en Blanco.
+            // Eliminar las opciones anteriores
+            while (selectCandidatos.firstChild) {
+                selectCandidatos.removeChild(selectCandidatos.firstChild);
+            }
 
-  const data = {
-    nombre,
-    alias,
-    rut,
-    email,
-    region,
-    comuna,
-  }
+            // Agregar la opción predeterminada
+            const optionPredeterminada = document.createElement("option");
+            optionPredeterminada.value = "";
+            optionPredeterminada.innerHTML = "Seleccione un candidato";
+            selectCandidatos.appendChild(optionPredeterminada);
 
-  const url = 'http://localhost/prueba/php/guardar.php'
+            // Agregar los candidatos
+            candidatos.forEach((candidato) => {
+                const option = document.createElement("option");
+                option.value = candidato[0];
+                option.innerHTML = candidato[1];
+                selectCandidatos.appendChild(option);
+            });
+        });
+};
 
-  // Enviar los datos al servidor
+// generar comunas
+document.getElementById("region").addEventListener("change", (event) => {
+    const idRegion = event.target.value;
 
-  //POST AXIOS
-  axios
-    .post(url, data, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':
-          'http://localhost/prueba/php/guardar.php',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-      },
-    })
-    .then((response) => {
-      console.log(response.data)
-    })
-    .catch((error) => {
-      console.log('Error: ' + error.message)
-    })
+    generarComunas(idRegion);
+});
 
-  //POST AJAX
-  // $.ajax({
-  //   url: url,
-  //   type: 'POST',
-  //   data: JSON.stringify(data),
-  //   contentType: 'application/json',
-  //   headers: {
-  //     'Access-Control-Allow-Origin': 'http://localhost/prueba/php/guardar.php', // Dominio del cliente que hace la solicitud
-  //     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', // Métodos HTTP permitidos
-  //     'Access-Control-Allow-Headers': 'Content-Type', // Encabezados personalizados permitidos
-  //   },
-  //   success: function (data) {
-  //     console.log(data)
-  //   },
-  //   error: function (jqXHR, textStatus, errorThrown) {
-  //     console.log('Error: ' + textStatus + ' ' + errorThrown)
-  //   },
-  // })
+// generar candidatos
+document.getElementById("comuna").addEventListener("change", (event) => {
+    const idComuna = event.target.value;
 
-  // //POST FETCH
-  // fetch(url, {
-  //   method: 'POST',
-  //   body: JSON.stringify(data),
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     'Access-Control-Allow-Origin': url, // Dominio del cliente que hace la solicitud
-  //     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', // Métodos HTTP permitidos
-  //     'Access-Control-Allow-Headers': 'Content-Type', // Encabezados personalizados permitidos
-  //   },
-  // })
-  //   .then((response) => response.json())
-  //   .then((data) => console.log(data))
-  //   .catch((error) => console.error(error))
-})
+    generarCandidatos(idComuna);
+});

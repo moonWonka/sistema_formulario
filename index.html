@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/reset.css" type="text/css" />
     <link rel="stylesheet" href="./css/index.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Prueba Tecnica</title>
   </head>
-  <body>
+  <body onload="generarRegiones()">
     <head>
       <header>
         <h1>Prueba Tecnica</h1>
@@ -22,28 +20,43 @@
         <h2>Formulario de Votacion</h2>
 
         <label for="txt_nombre">Nombre y Apellido</label>
-        <input type="text" id="txt_nombre" onblur="validarNombre()" />
+        <input
+          name="nombre"
+          type="text"
+          id="txt_nombre"
+          onblur="validarNombre()"
+        />
         <div class="validacion" id="contenedor-nombre">
           <p class="mensaje-validacion" id="mensaje-nombre"></p>
         </div>
         <br />
 
         <label for="txt_alias">Alias</label>
-        <input type="text" id="txt_alias" onblur="validarAlias()" />
+        <input
+          name="alias"
+          type="text"
+          id="txt_alias"
+          onblur="validarAlias()"
+        />
         <div class="validacion" id="contenedor-alias">
           <p class="mensaje-validacion" id="mensaje-alias"></p>
         </div>
         <br />
 
         <label for="txt_rut">Rut</label>
-        <input type="text" id="txt_rut" onblur="validarRut()" />
+        <input name="rut" type="text" id="txt_rut" onblur="validarRut()" />
         <div class="validacion mostrar-verificacion" id="contenedor-rut">
           <p class="mensaje-validacion" id="mensaje-rut"></p>
         </div>
         <br />
 
         <label for="txt_email">Email</label>
-        <input type="text" id="txt_email" onblur="validarEmail()" />
+        <input
+          name="email"
+          type="email"
+          id="txt_email"
+          onblur="validarEmail()"
+        />
         <div class="validacion mostrar-verificacion" id="contenedor-email">
           <p class="mensaje-validacion" id="mensaje-email"></p>
         </div>
@@ -51,20 +64,23 @@
 
         <label for="region">Región:</label>
         <select name="region" id="region"></select>
+        <div class="validacion mostrar-verificacion" id="contenedor-region">
+          <p class="mensaje-validacion" id="mensaje-region"></p>
+        </div>
         <br />
 
         <label for="comuna">Comuna:</label>
-        <select name="comuna" id="comuna">
-          <option value="">Seleccione una comuna</option>
-          <option value="2745">prueba comuna</option>
-        </select>
+        <select name="comuna" id="comuna"></select>
+        <div class="validacion mostrar-verificacion" id="contenedor-comuna">
+          <p class="mensaje-validacion" id="mensaje-comuna"></p>
+        </div>
         <br />
 
         <label for="candidato">Candidato:</label>
-        <select name="candidato" id="candidato">
-          <option value="">Seleccione candidato</option>
-          <option value="candidato">$nombre_candidato</option>
-        </select>
+        <select name="candidato" id="candidato"></select>
+        <div class="validacion mostrar-verificacion" id="contenedor-candidato">
+          <p class="mensaje-validacion" id="mensaje-candidato"></p>
+        </div>
         <br />
 
         <label> Cómo se enteró de nosotros: </label>
@@ -81,8 +97,8 @@
           name="como_se_entero[]"
           value="redes_sociales"
         />
-
         <label for="redes_sociales">Redes Sociales </label>
+
         <input
           type="checkbox"
           id="amigo"
@@ -90,13 +106,16 @@
           value="amigo"
         />
         <label for="amigo">Amigo</label>
+        <div class="validacion mostrar-verificacion" id="contenedor-checkbox">
+          <p class="mensaje-validacion" id="mensaje-checkbox"></p>
+        </div>
         <br />
 
         <button type="submit">Votar</button>
       </form>
     </main>
 
-    <script src="./js/script.js" defer></script>
+    <script src="./js/script.js"></script>
     <script src="./js/validaciones.js"></script>
   </body>
 </html>

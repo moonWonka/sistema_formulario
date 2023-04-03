@@ -13,6 +13,7 @@ function getRegiones(){
 function mostrarIdRegion($nombre){
     global $conn;
     $sql = "SELECT id_region FROM regiones WHERE nombre_region = '$nombre'";
+    print($sql);
     $result = mysqli_query($conn, $sql);
     $id = mysqli_fetch_row($result);
     return $id[0];

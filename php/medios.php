@@ -61,8 +61,8 @@ function deleteMedio($id){
     }
 }
 
-insertarMedio("TV");
-insertarMedio("Amigo");
-insertarMedio("Web");
-insertarMedio("Redes Sociales");
+// insertarMedio("TV");
+// insertarMedio("Amigo");
+// insertarMedio("Web");
+// insertarMedio("Redes Sociales");
 ?>

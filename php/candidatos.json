@@ -1,0 +1,542 @@
+[
+  {
+    "partido": "Partido de la Gente",
+    "nombre": "María González",
+    "comuna": "Santiago",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Frente Amplio",
+    "nombre": "Pedro Pérez",
+    "comuna": "Valparaíso",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Juan López",
+    "comuna": "Viña del Mar",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "Ana Torres",
+    "comuna": "Concepción",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Francisco Ruiz",
+    "comuna": "Antofagasta",
+    "region": "Región de Antofagasta"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "María Flores",
+    "comuna": "Puente Alto",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Pedro Ramírez",
+    "comuna": "Valparaíso",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido de la Gente",
+    "nombre": "Sofía Sánchez",
+    "comuna": "Viña del Mar",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Frente Amplio",
+    "nombre": "Juan Pérez",
+    "comuna": "Concepción",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Camila González",
+    "comuna": "Antofagasta",
+    "region": "Región de Antofagasta"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Jorge Gutiérrez",
+    "comuna": "Santiago",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido Ecologista Verde",
+    "nombre": "Marcela Aravena",
+    "comuna": "Valdivia",
+    "region": "Región de Los Ríos"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Andrés Morales",
+    "comuna": "Rancagua",
+    "region": "Región del Libertador Gral. Bernardo OHiggins"
+  },
+  {
+    "partido": "Partido Comunista",
+    "nombre": "Gonzalo Martínez",
+    "comuna": "Temuco",
+    "region": "Región de La Araucanía"
+  },
+  {
+    "partido": "Partido Regionalista Independiente",
+    "nombre": "Carolina Castillo",
+    "comuna": "Iquique",
+    "region": "Región de Tarapacá"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Manuel Ortiz",
+    "comuna": "La Serena",
+    "region": "Región de Coquimbo"
+  },
+  {
+    "partido": "Partido Demócrata Cristiano",
+    "nombre": "Cristina González",
+    "comuna": "Curicó",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Partido Humanista",
+    "nombre": "Lucas Salas",
+    "comuna": "Chillán",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Frente Amplio",
+    "nombre": "Isabella Rojas",
+    "comuna": "Quilpué",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Fernando Vargas",
+    "comuna": "Providencia",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Ana Vargas",
+    "comuna": "Calama",
+    "region": "Región de Antofagasta"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "Mario Campos",
+    "comuna": "La Pintana",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido de la Gente",
+    "nombre": "Rosa Maldonado",
+    "comuna": "La Florida",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido Regionalista Independiente",
+    "nombre": "Javier Castro",
+    "comuna": "Antofagasta",
+    "region": "Región de Antofagasta"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Carla Soto",
+    "comuna": "Punta Arenas",
+    "region": "Región de Magallanes y de la Antártica Chilena"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Mauricio Rojas",
+    "comuna": "Valdivia",
+    "region": "Región de Los Ríos"
+  },
+  {
+    "partido": "Partido Demócrata Cristiano",
+    "nombre": "Diego Lagos",
+    "comuna": "Talca",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Karen Castro",
+    "comuna": "Antofagasta",
+    "region": "Región de Antofagasta"
+  },
+  {
+    "partido": "Partido Comunista",
+    "nombre": "Pedro Molina",
+    "comuna": "Osorno",
+    "region": "Región de Los Lagos"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Nicolás González",
+    "comuna": "La Serena",
+    "region": "Región de Coquimbo"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Vicente Pérez",
+    "comuna": "Curicó",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Francisca Pérez",
+    "comuna": "San Felipe",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Pablo Sánchez",
+    "comuna": "Rancagua",
+    "region": "Región del Libertador Gral. Bernardo OHiggins"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "Laura García",
+    "comuna": "Santiago",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Manuela Pérez",
+    "comuna": "Antofagasta",
+    "region": "Región de Antofagasta"
+  },
+  {
+    "partido": "Partido de la Gente",
+    "nombre": "Joaquín Rojas",
+    "comuna": "Lo Espejo",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido Demócrata Cristiano",
+    "nombre": "Carolina Gutiérrez",
+    "comuna": "Chillán",
+    "region": "Región del Ñuble"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Andrés León",
+    "comuna": "Pudahuel",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Lucas Torres",
+    "comuna": "Copiapó",
+    "region": "Región de Atacama"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Florencia Castro",
+    "comuna": "Temuco",
+    "region": "Región de la Araucanía"
+  },
+  {
+    "partido": "Partido Comunista",
+    "nombre": "Jorge Silva",
+    "comuna": "Castro",
+    "region": "Región de Los Lagos"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Luisa González",
+    "comuna": "Valparaíso",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "Pablo Vargas",
+    "comuna": "Concepción",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "María Martínez",
+    "comuna": "Antofagasta",
+    "region": "Región de Antofagasta"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Felipe Rojas",
+    "comuna": "San Antonio",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido de la Gente",
+    "nombre": "Sofía Rojas",
+    "comuna": "Las Condes",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Andrea Salinas",
+    "comuna": "La Serena",
+    "region": "Región de Coquimbo"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Miguel Ángel Pérez",
+    "comuna": "Los Ángeles",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Partido Comunista",
+    "nombre": "Camila González",
+    "comuna": "Valparaíso",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Patricia Soto",
+    "comuna": "Chillán",
+    "region": "Región del Ñuble"
+  },
+  {
+    "partido": "PartUnión Demócrata Independiente",
+    "nombre": "Sofía Flores",
+    "comuna": "Rancagua",
+    "region": "Región del Libertador Gral. Bernardo OHiggins"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Ignacio Martínez",
+    "comuna": "Concepción",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Verónica Gómez",
+    "comuna": "Puerto Varas",
+    "region": "Región de Los Lagos"
+  },
+  {
+    "partido": "Partido de la Gente",
+    "nombre": "Pedro Torres",
+    "comuna": "Viña del Mar",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Mauricio Gutiérrez",
+    "comuna": "Iquique",
+    "region": "Región de Tarapacá"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "Valentina Rivas",
+    "comuna": "Talca",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Javier Pérez",
+    "comuna": "Valdivia",
+    "region": "Región de Los Ríos"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Marcela Rojas",
+    "comuna": "San Bernardo",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido Comunista",
+    "nombre": "Diego Muñoz",
+    "comuna": "San Felipe",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Natalia González",
+    "comuna": "Talcahuano",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "María Fernández",
+    "comuna": "Lampa",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido de la Gente",
+    "nombre": "Ignacio Aravena",
+    "comuna": "La Florida",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Patricia Soto",
+    "comuna": "Villarrica",
+    "region": "Región de la Araucanía"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "Rodrigo Torres",
+    "comuna": "Parral",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Francisco Rojas",
+    "comuna": "Quilpué",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido Comunista",
+    "nombre": "Camila Álvarez",
+    "comuna": "Coyhaique",
+    "region": "Región de Aysén del General Carlos Ibáñez del Campo"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Diego Martínez",
+    "comuna": "Chillán",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Sara Orellana",
+    "comuna": "Antofagasta",
+    "region": "Región de Antofagasta"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Gustavo López",
+    "comuna": "Vitacura",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido de la Gente",
+    "nombre": "Valeria Salinas",
+    "comuna": "Valparaíso",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido Demócrata Cristiano",
+    "nombre": "Marcelo Rojas",
+    "comuna": "San Javier",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Karen Pérez",
+    "comuna": "Punta Arenas",
+    "region": "Región de Magallanes y de la Antártica Chilena"
+  },
+  {
+    "partido": "Partido Comunista",
+    "nombre": "Jorge Morales",
+    "comuna": "Quellón",
+    "region": "Región de Los Lagos"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "María José González",
+    "comuna": "Talagante",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "Juan Pérez",
+    "comuna": "San Felipe",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Felipe Castro",
+    "comuna": "Cauquenes",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Javier Vega",
+    "comuna": "La Cisterna",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "Florencia Ortiz",
+    "comuna": "Concepción",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Partido Comunista",
+    "nombre": "Laura Muñoz",
+    "comuna": "Puerto Montt",
+    "region": "Región de Los Lagos"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Pablo Salas",
+    "comuna": "San Antonio",
+    "region": "Región de Valparaíso"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "Valentina Castro",
+    "comuna": "Talca",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Francisca Díaz",
+    "comuna": "Copiapó",
+    "region": "Región de Atacama"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Pedro Morales",
+    "comuna": "Lo Espejo",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido de la Gente",
+    "nombre": "Carla Valenzuela",
+    "comuna": "Curicó",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Partido Radical Socialdemócrata",
+    "nombre": "David Silva",
+    "comuna": "Rancagua",
+    "region": "Región del Libertador Gral. Bernardo OHiggins"
+  },
+  {
+    "partido": "Partido Comunista",
+    "nombre": "Gabriel Soto",
+    "comuna": "Osorno",
+    "region": "Región de Los Lagos"
+  },
+  {
+    "partido": "Unión Demócrata Independiente",
+    "nombre": "Javiera Fernández",
+    "comuna": "Peñalolén",
+    "region": "Región Metropolitana de Santiago"
+  },
+  {
+    "partido": "Partido Socialista",
+    "nombre": "Manuel Pérez",
+    "comuna": "Parral",
+    "region": "Región del Maule"
+  },
+  {
+    "partido": "Renovación Nacional",
+    "nombre": "Andrea Salazar",
+    "comuna": "Talcahuano",
+    "region": "Región del Biobío"
+  },
+  {
+    "partido": "Partido Progresista",
+    "nombre": "Francisco Ramírez",
+    "comuna": "La Pintana",
+    "region": "Región Metropolitana de Santiago"
+  }
+]

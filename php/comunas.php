@@ -1,12 +1,12 @@
 <?php
 require_once("db_conexion.php");
 
-function getComunas() {
+function getComunas($idRegion) {
     global $conn;
-    $sql = "SELECT * FROM comunas";
+    $sql = "SELECT * FROM comunas WHERE id_region_comuna = $idRegion";
     $result = mysqli_query($conn, $sql);
     $comunas = mysqli_fetch_all($result);
-    print_r($comunas);
+    return $comunas;
 }
 
 function getComuna($id) {
@@ -15,6 +15,15 @@ function getComuna($id) {
     $result = mysqli_query($conn, $sql);
     $comuna = mysqli_fetch_assoc($result);
     print_r($comuna);
+}
+
+function mostrarIdComuna($nombre) {
+    global $conn;
+    $sql = "SELECT id_comunas FROM comunas WHERE nombre_comuna = '$nombre'";
+    print($sql);
+    $result = mysqli_query($conn, $sql);
+    $id = mysqli_fetch_row($result);
+    return $id[0];
 }
 
 function insertarComuna($nombre, $id_region) {

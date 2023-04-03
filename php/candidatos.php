@@ -2,12 +2,12 @@
 
 require_once("db_conexion.php");
 
-function getCandidatos(){
+function getCandidatos($idComuna){
     global $conn;
-    $sql = "SELECT * FROM candidatos";
+    $sql = "SELECT * FROM candidatos WHERE id_comuna_candidato = $idComuna";
     $result = mysqli_query($conn, $sql);
     $candidatos = mysqli_fetch_all($result);
-    print_r($candidatos);
+    return $candidatos;
 }
 
 function mostrarIdRegionCandidato($id_candidato){

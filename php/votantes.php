@@ -17,6 +17,20 @@ function getVotante($id){
     print_r($votante);
 }
 
+function getNombreVotante($rut){
+    global $conn;
+    $sql = "SELECT nombre_votante FROM votantes WHERE rut_votante = '$rut'";
+    $result = mysqli_query($conn, $sql);
+    $votante = mysqli_fetch_assoc($result);
+    // if ($votante == ""){
+    //     return "Votante no encontrado";
+    // } else {
+    //     return $votante['nombre_votante'];
+    // }
+    return $votante;
+}
+
+
 function insertarVotante($nombre, $alias, $rut, $email, $id_region, $id_comuna) {
     global $conn;
     $sql = "INSERT INTO votantes (nombre_votante, alias, rut_votante, email_votante, id_region_votante, id_comuna_votante) VALUES ('$nombre', '$alias', '$rut', '$email', $id_region, $id_comuna)";
@@ -53,4 +67,8 @@ function deleteVotante($id){
     }
 }
 
-?>
+// if (getNombreVotante("123456789") == ""){
+//     echo "No existe";
+// } else {
+//     echo "Existe";
+// }
