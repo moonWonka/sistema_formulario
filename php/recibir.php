@@ -19,40 +19,43 @@ if (isset($_POST['nombre']) && isset($_POST['alias']) && isset($_POST['rut']) &&
     
 
 
-    // // insertar votante
-    insertarVotante($nombre, $alias, $rut_sin_puntos, $email, $region, $comuna);
+    // insertar votante
+    $id_votante = insertarVotante($nombre, $alias, $rut_sin_puntos, $email, $region, $comuna);
 
-    // // obtener id del votante
-    $id_votante = getIdVotante($rut);
+    // verificar si se obtuvo un id válido
+    if ($id_votante != null) {
 
-    // // // insertar votacion
-    // insertarVoto($id_votante, $candidato);
+        // insertar votacion
+        insertarVoto($id_votante, $candidato);
 
-    // //insertar como se entero
-    // insertarVotanteMedio($id_votante, $como_se_entero);
+        //insertar como se entero
+        // insertarVotanteMedio($id_votante, $como_se_entero);
 
+        $response = array(
+            'nombre' => $nombre,
+            'alias' => $alias,
+            'rut' => $rut,
+            'email' => $email,
+            'region' => $region,
+            'comuna' => $comuna,
+            'candidato' => $candidato,
+            'como_se_entero' => $como_se_entero,
+            "mensaje" => "Votante insertado correctamente"
+        );
 
-
-    $respose = array(
-        'nombre' => $nombre,
-        'alias' => $alias,
-        'rut' => $rut,
-        'email' => $email,
-        'region' => $region,
-        'comuna' => $comuna,
-        'candidato' => $candidato,
-        'como_se_entero' => $como_se_entero,
-    );
-
-//    echo json_encode($respose,true);
-echo json_encode('yes',TRUE);
+        echo json_encode($response, true);
+    } else {
+        $response = array(
+            'error' => true,
+            "mensaje" => "Error al insertar votante"
+        );
+        echo json_encode($response, true);
+    }
 } else {
-    echo json_encode('yes',200);
-    // $response = array(
-    //     'error' => 'error en los datos'
-    // );
-    // echo json_encode($response);
-    echo "no";
+    $response = array(
+        'error' => true,
+        "mensaje" => "Error al insertar votante - parametros"
+    );
+    echo json_encode($response, true);
 }
-
 ?>

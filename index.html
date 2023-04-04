@@ -16,7 +16,8 @@
     </head>
 
     <main>
-      <form action="POST" id="formulario_voto">
+      <!-- onsubmit="return VL_formulario()" -->
+      <form id="formulario_voto">
         <h2>Formulario de Votacion</h2>
 
         <label for="txt_nombre">Nombre y Apellido</label>
@@ -108,6 +109,12 @@
 
         <button type="submit">Votar</button>
       </form>
+
+      <div>
+        <h1 id="mensaje">
+          <!-- .......autocpmplete response servidor.............. -->
+        </h1>
+      </div>
     </main>
 
     <script src="./js/script.js"></script>

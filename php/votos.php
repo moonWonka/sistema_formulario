@@ -21,14 +21,7 @@ function getVoto($id){
 function insertarVoto($id_votante, $id_candidato) {
     global $conn;
     $sql = "INSERT INTO votos (id_votante_voto, id_candidato_voto) VALUES ($id_votante, $id_candidato)";
-    echo $sql;
-    $result = mysqli_query($conn, $sql);
-    
-    if ($result) {
-        echo mysqli_affected_rows($conn) . " registro insertado: " . $id_votante . ", " . $id_candidato;
-    } else {
-        echo "Error al insertar el registro: " . mysqli_error($conn);
-    }
+    $conn -> query($sql);
 }
 
 function updateVoto($id, $id_votante, $id_candidato){

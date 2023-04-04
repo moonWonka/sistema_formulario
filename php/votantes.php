@@ -9,18 +9,14 @@ function getVotantes(){
     print_r($votantes);
 }
 
-    function getIdVotante($rut){
-        global $conn;
-        $sql = "SELECT id_votante FROM votantes WHERE rut_votante = '".$rut."'";
+function getIdVotante($rut){
+    global $conn;
+    $sql = "SELECT id_votante FROM votantes WHERE rut_votante = '$rut'";
 
+    $result = mysqli_query($conn, $sql);
+    $votante = mysqli_fetch_assoc($result);
 
-        //print($sql);
-        $result = mysqli_query($conn, $sql);
-        $votante = mysqli_fetch_assoc($result);
-
-        echo json_encode($votante,true);
-        //print_r($votante);
-        return($votante['id_votante']);
+    return($votante["id_votante"]);
     }
 
 function getNombreVotante($rut){
@@ -28,26 +24,18 @@ function getNombreVotante($rut){
     $sql = "SELECT nombre_votante FROM votantes WHERE rut_votante = '$rut'";
     $result = mysqli_query($conn, $sql);
     $votante = mysqli_fetch_assoc($result);
-    // if ($votante == ""){
-    //     return "Votante no encontrado";
-    // } else {
-    //     return $votante['nombre_votante'];
-    // }
-    return $votante;
+    if ($votante == null) {
+        return "";
+    }
+    return $votante["nombre_votante"];
 }
 
 
 function insertarVotante($nombre, $alias, $rut, $email, $id_region, $id_comuna) {
     global $conn;
     $sql = "INSERT INTO votantes (nombre_votante, alias, rut_votante, email_votante, id_region_votante, id_comuna_votante) VALUES ('$nombre', '$alias', '$rut', '$email', $id_region, $id_comuna)";
-    mysqli_query($conn, $sql);
-    // if ($result) {
-    //     echo mysqli_affected_rows($conn) . " registro insertado: " . $nombre;
-    //     return true;
-    // } else {
-    //     echo "Error al insertar el registro: " . mysqli_error($conn);
-    //     return false;
-    // }
+    $conn -> query($sql);
+    return ($conn -> insert_id);
 }
 
 function updateVotante($id, $nombre, $alias, $rut, $email, $id_region, $id_comuna){
@@ -73,10 +61,17 @@ function deleteVotante($id){
 }
 
 
-// insertarVotante("dsds ds", "sssdsdsd5", "18.989.009-k", "w.lunah@protonmail.com", "419", "2747");
+// echo (getNombreVotante("18989009k"));
 
+// $id_incertado = insertarVotante("wonka prueba", "pedasito", "18.989.009-k", "w.lunah@protonmail.com", "419", "2747");
+// print($id_incertado);
 // if (getNombreVotante("123456789") == ""){
 //     echo "No existe";
 // } else {
 //     echo "Existe";
 // }
+
+?>
+
+
+

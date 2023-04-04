@@ -35,44 +35,39 @@ const validarAlias = () => {
   }
 }
 
-const rutDuplicado = () => {
-  console.log('rut duplicado corriendo')
+const rutDuplicado = async (rut) => {
   //eliminat espacio en blanco
-  const rut = document.getElementById('txt_rut').value.trim()
+  const rutSinEspacios = rut.trim()
 
   //eliminar puntos y guión
-  const rutSinPuntos = rut.replace(/\./g, '')
+  const rutSinPuntos = rutSinEspacios.replace(/\./g, '')
   const rutSinGuion = rutSinPuntos.replace(/\-/g, '')
   const rutSinGuionNiPuntos = rutSinGuion.replace(/\s/g, '')
 
-  //revisar rut en base de datos
-  fetch('./php/votantes_api.php?rut=' + rutSinGuionNiPuntos)
-    .then((response) => response.json())
-    .then((response) => {
-      //si el rut ya está registrado
-      if (response.length > 0) {
-        document.getElementById('mensaje-rut').innerHTML =
-          'El rut ya está registrado'
-        document.getElementById('contenedor-rut').classList.add('mostrar-error')
-        return false
-        //si el rut no está registrado
-      } else {
-        document
-          .getElementById('contenedor-rut')
-          .classList.remove('mostrar-error')
-        return true
-      }
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+  try {
+    //revisar rut en base de datos
+    const response = await fetch(
+      './php/votantes_api.php?rut=' + rutSinGuionNiPuntos
+    )
+    const data = await response.json()
+
+    //si el rut ya está registrado
+    if (data.nombre.length > 0) {
+      return true
+    } else {
+      return false
+    }
+  } catch (error) {
+    console.error('Error:', error)
+    return false
+  }
 }
 
-const validarRut = () => {
+const validarRut = async () => {
   const rutRegex = /^0*(\d{1,3}(\.?\d{3})*)\-?([\dkK])$/ //expresión regular para validar rut
   const rut = document.getElementById('txt_rut').value.trim()
 
-  if (rutDuplicado()) {
+  if (await rutDuplicado(rut)) {
     document.getElementById('mensaje-rut').innerHTML =
       'El rut ya está registrado'
     document.getElementById('contenedor-rut').classList.add('mostrar-error')
@@ -194,7 +189,7 @@ const validarCheckbox = () => {
 
 document
   .getElementById('formulario_voto')
-  .addEventListener('submit', function (event) {
+  .addEventListener('submit', async function (event) {
     event.preventDefault()
 
     //validar todos los campos
@@ -202,7 +197,7 @@ document
     if (
       validarNombre() &&
       validarAlias() &&
-      validarRut() &&
+      (await validarRut()) &&
       validarEmail() &&
       validarRegion() &&
       validarComuna() &&
@@ -216,10 +211,19 @@ document
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
+          const mensaje = document.getElementById('mensaje')
+          mensaje.innerHTML = data.mensaje
         })
     } else {
       //si hay algún campo inválido
-      console.log('Hay campos inválidos')
+      document.getElementById('mensaje').innerHTML = 'Hay campos inválidos'
     }
   })
+
+// function VL_formulario() {
+//   if ($('#nombre').val() == '') {
+//     alert('El campo no puede estar vacio')
+//     $('#nombre').focus()
+//     return false
+//   }
+// }
