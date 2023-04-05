@@ -3,6 +3,7 @@
 include('regiones.php');
 include('comunas.php');
 include('candidatos.php');
+include('medios.php');
 
 // Obtener el contenido del archivo regiones.json    
 $contenido = file_get_contents('regiones.json');
@@ -51,9 +52,16 @@ function agregarCandidatos () {
     }
 }
 
+
+
 agregarRegiones($regiones);
 agregarComunas($regiones);
 agregarCandidatos();
+insertarMedio("TV");
+insertarMedio("Amigo");
+insertarMedio("Web");
+insertarMedio("Redes Sociales");
+
 
 
 ?>

@@ -60,9 +60,4 @@ function deleteMedio($id){
         echo "Error al eliminar medio";
     }
 }
-
-// insertarMedio("TV");
-// insertarMedio("Amigo");
-// insertarMedio("Web");
-// insertarMedio("Redes Sociales");
 ?>
