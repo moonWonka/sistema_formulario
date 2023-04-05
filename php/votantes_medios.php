@@ -15,13 +15,7 @@ function getVotantesMedios($id_medio) {
 function insertarVotanteMedio($id_votante, $id_medio) {
   global $conn;
   $sql = "INSERT INTO votantes_medios (id_votante, id_medio) VALUES ($id_votante, $id_medio)";
-  $result = mysqli_query($conn, $sql);
-
-  if ($result) {
-    echo "Se ha insertado el votante y medio con éxito";
-  } else {
-    echo "Error al insertar el votante y medio: " . mysqli_error($conn);
-  }
+  $conn -> query($sql);
 }
 
 // Actualizar un votante y medio existente
@@ -49,4 +43,7 @@ function eliminarVotanteMedio($id_votante, $id_medio) {
     echo "Error al eliminar el votante y medio: " . mysqli_error($conn);
   }
 }
+
+// insertarVotanteMedio(76, 4);
+
 ?>

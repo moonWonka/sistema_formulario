@@ -35,20 +35,36 @@ const validarAlias = () => {
   }
 }
 
+function calcularDigitoVerificador(rut) {
+  // varible rut sin puntos ni guión ni digito verificador
+  rut = rut.split('').reverse() // Revertir el Rut
+
+  let suma = 0
+  let factor = 2
+  for (let i = 0; i < rut.length; i++) {
+    suma += parseInt(rut[i]) * factor
+    factor = factor === 7 ? 2 : factor + 1
+  }
+
+  const resto = suma % 11
+  let digitoVerificador
+
+  if (resto === 1) {
+    digitoVerificador = 'K'
+  } else if (resto === 0) {
+    digitoVerificador = '0'
+  } else {
+    digitoVerificador = (11 - resto).toString()
+  }
+
+  return digitoVerificador
+}
+
 const rutDuplicado = async (rut) => {
-  //eliminat espacio en blanco
-  const rutSinEspacios = rut.trim()
-
-  //eliminar puntos y guión
-  const rutSinPuntos = rutSinEspacios.replace(/\./g, '')
-  const rutSinGuion = rutSinPuntos.replace(/\-/g, '')
-  const rutSinGuionNiPuntos = rutSinGuion.replace(/\s/g, '')
-
+  // rut sin espacio ni puntos ni guión
   try {
     //revisar rut en base de datos
-    const response = await fetch(
-      './php/votantes_api.php?rut=' + rutSinGuionNiPuntos
-    )
+    const response = await fetch('./php/votantes_api.php?rut=' + rut)
     const data = await response.json()
 
     //si el rut ya está registrado
@@ -67,28 +83,55 @@ const validarRut = async () => {
   const rutRegex = /^0*(\d{1,3}(\.?\d{3})*)\-?([\dkK])$/ //expresión regular para validar rut
   const rut = document.getElementById('txt_rut').value.trim()
 
-  if (await rutDuplicado(rut)) {
+  // si el rut está vacío
+  if (rut === '') {
+    document.getElementById('mensaje-rut').innerHTML = 'Ingrese un rut'
+    document.getElementById('contenedor-rut').classList.add('mostrar-error')
+    return false
+  }
+
+  // si el rut no tiene un formato válido
+  if (!rutRegex.test(rut)) {
+    document.getElementById('mensaje-rut').innerHTML = 'Ingrese un rut válido'
+    document.getElementById('contenedor-rut').classList.add('mostrar-error')
+    return false
+  }
+
+  // rut sin puntos ni guión
+  const rutSinPuntos = rut.replace(/\./g, '')
+  const rutSinGuion = rutSinPuntos.replace(/\-/g, '')
+  const rutSinGuionNiPuntos = rutSinGuion.replace(/\s/g, '')
+
+  // si el rut es mayor a 9 caracteres
+  if (rutSinGuionNiPuntos.length > 9) {
+    document.getElementById('mensaje-rut').innerHTML =
+      'Ingrese un rut válido (muy largo)'
+    return false
+  }
+
+  // sacar dígito verificador
+  const digito = rutSinGuionNiPuntos.slice(-1).toUpperCase()
+  const rutSinDigito = rutSinGuionNiPuntos.slice(0, -1)
+
+  // calcular y comparar dígito verificador
+  if (calcularDigitoVerificador(rutSinDigito) !== digito) {
+    document.getElementById('mensaje-rut').innerHTML =
+      'Ingrese un rut válido (DV)'
+    document.getElementById('contenedor-rut').classList.add('mostrar-error')
+    return false
+  }
+
+  // si el rut ya está registrado
+  if (await rutDuplicado(rutSinGuionNiPuntos)) {
     document.getElementById('mensaje-rut').innerHTML =
       'El rut ya está registrado'
     document.getElementById('contenedor-rut').classList.add('mostrar-error')
     return false
   }
 
-  //si es un rut vacío
-  if (rut === '') {
-    document.getElementById('mensaje-rut').innerHTML = 'Ingrese un rut'
-    document.getElementById('contenedor-rut').classList.add('mostrar-error')
-    return false
-
-    //si es un rut inválido
-  } else if (!rutRegex.test(rut)) {
-    document.getElementById('mensaje-rut').innerHTML = 'Ingrese un rut válido'
-    document.getElementById('contenedor-rut').classList.add('mostrar-error')
-    return false
-  } else {
-    document.getElementById('contenedor-rut').classList.remove('mostrar-error')
-    return true
-  }
+  // si todas las validaciones pasaron
+  document.getElementById('contenedor-rut').classList.remove('mostrar-error')
+  return true
 }
 
 const validarEmail = () => {

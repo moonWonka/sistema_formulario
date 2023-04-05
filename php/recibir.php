@@ -3,9 +3,7 @@ require_once("votantes.php");
 require_once("votos.php");
 require_once("votantes_medios.php");
 
-
 if (isset($_POST['nombre']) && isset($_POST['alias']) && isset($_POST['rut']) && isset($_POST['email']) && isset($_POST['region']) && isset($_POST['comuna']) && isset($_POST['candidato']) && isset($_POST['como_se_entero'])) {
-
 
     $nombre = $_POST['nombre'];
     $alias = $_POST['alias'];
@@ -17,8 +15,6 @@ if (isset($_POST['nombre']) && isset($_POST['alias']) && isset($_POST['rut']) &&
     $candidato = $_POST["candidato"];
     $como_se_entero = $_POST["como_se_entero"];
     
-
-
     // insertar votante
     $id_votante = insertarVotante($nombre, $alias, $rut_sin_puntos, $email, $region, $comuna);
 
@@ -29,7 +25,10 @@ if (isset($_POST['nombre']) && isset($_POST['alias']) && isset($_POST['rut']) &&
         insertarVoto($id_votante, $candidato);
 
         //insertar como se entero
-        // insertarVotanteMedio($id_votante, $como_se_entero);
+
+        foreach ($como_se_entero as $medio) {
+            insertarVotanteMedio($id_votante, $medio);
+        }
 
         $response = array(
             'nombre' => $nombre,
