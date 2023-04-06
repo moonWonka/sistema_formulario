@@ -3,8 +3,12 @@
 ## Índice
 
 1. Introducción
-2. Documentación de Funciones - Base de Datos Regiones
+2. Documentación de Funciones - Base de Datos Regiones (#Documentación de Funciones - Base de Datos Regiones)
 3. Documentación de Funciones - Base de Datos Candidatos
+4. Documentación de Funciones - Base de Datos Comunas
+5. Documentación de Funciones - Base de Datos Medios
+6. Documentación de Funciones - Base de Datos Votantes
+7. Documentación de Funciones - Funciones de Validación
 
 ## Introducción
 
@@ -185,3 +189,403 @@ Parámetros:
 Retorna:
 
 Nada.
+
+## Documentación de Funciones - Base de Datos Comunas
+
+Este archivo contiene las funciones para realizar operaciones CRUD en la tabla "comunas" de la base de datos.
+
+### Funciones Disponibles
+
+### getComunas(\$idRegion)
+
+Obtiene todas las comunas que pertenecen a una región específica desde la tabla "comunas" de la base de datos.
+
+**Parámetros:**
+
+- \$idRegion (integer): El ID de la región de la cual se quieren obtener las comunas.
+
+**Retorna:**
+
+Un array con todas las comunas de la región especificada.
+
+### getComuna(\$id)
+
+Obtiene los detalles de una comuna específica por su ID desde la tabla "comunas" de la base de datos.
+
+**Parámetros:**
+
+- \$id (integer): El ID de la comuna que se desea obtener.
+
+**Retorna:**
+
+Un array asociativo con los detalles de la comuna.
+
+### mostrarIdComuna(\$nombre)
+
+Obtiene el ID de una comuna por su nombre desde la tabla "comunas" de la base de datos.
+
+**Parámetros:**
+
+- \$nombre (string): El nombre de la comuna de la cual se quiere obtener el ID.
+
+**Retorna:**
+
+El ID de la comuna buscada.
+
+### insertarComuna(\$nombre, \$id_region)
+
+Inserta una nueva comuna en la tabla "comunas" de la base de datos.
+
+**Parámetros:**
+
+- \$nombre (string): El nombre de la comuna que se desea insertar.
+- \$id_region (integer): El ID de la región a la cual se debe asociar la comuna.
+
+**Retorna:**
+
+Nada.
+
+### updateComuna(\$id, \$nombre, \$id_region)
+
+Actualiza los datos de una comuna específica en la tabla "comunas" de la base de datos.
+
+**Parámetros:**
+
+- \$id (integer): El ID de la comuna que se desea actualizar.
+- \$nombre (string): El nuevo nombre de la comuna.
+- \$id_region (integer): El nuevo ID de la región a la cual se debe asociar la comuna.
+
+**Retorna:**
+
+Nada.
+
+### deleteComuna(\$id)
+
+Elimina una comuna específica de la tabla "comunas" de la base de datos.
+
+**Parámetros:**
+
+- \$id (integer): El ID de la comuna que se desea eliminar.
+
+**Retorna:**
+
+Nada.
+
+### mostrarComunasPorRegion(\$nombre)
+
+Obtiene todas las comunas de una región específica por su nombre desde la tabla "comunas" de la base de datos.
+
+**Parámetros:**
+
+- \$nombre (string): El nombre de la región de la cual se quieren obtener las comunas.
+
+**Retorna:**
+
+Un array con todas las comunas de la región especificada.
+
+## Documentación de Funciones - Base de Datos Medios
+
+Este archivo contiene las funciones para realizar operaciones CRUD en la tabla "medios" de la base de datos.
+
+### Funciones Disponibles
+
+### getMedios()
+
+Obtiene todos los medios desde la tabla "medios" de la base de datos.
+
+**Parámetros:**
+
+Ninguno.
+
+**Retorna:**
+
+Un array con todos los medios.
+
+### mostrarIdMedio($nombre)
+
+Obtiene el ID de un medio en base a su nombre.
+
+**Parámetros:**
+
+- `$nombre`: Nombre del medio a buscar.
+
+**Retorna:**
+
+El ID del medio encontrado.
+
+### getMedio($id)
+
+Obtiene un registro de la tabla "medios" en la base de datos en base a su ID.
+
+**Parámetros:**
+
+- `$id`: ID del medio a obtener.
+
+**Retorna:**
+
+Un array asociativo con los datos del medio encontrado.
+
+### insertarMedio($medio)
+
+Inserta un nuevo registro en la tabla "medios" con el nombre del medio proporcionado.
+
+**Parámetros:**
+
+- `$medio`: Nombre del medio a insertar.
+
+**Retorna:**
+
+Nada.
+
+### updateMedio($id, $nombre)
+
+Actualiza el nombre de un medio en la tabla "medios" en base a su ID.
+
+**Parámetros:**
+
+- `$id`: ID del medio a actualizar.
+- `$nombre`: Nuevo nombre del medio.
+
+**Retorna:**
+
+Nada.
+
+### deleteMedio($id)
+
+Elimina un medio de la tabla "medios" en base a su ID.
+
+**Parámetros:**
+
+- `$id`: ID del medio a eliminar.
+
+**Retorna:**
+
+Nada.
+
+## Documentación de Funciones - Base de Datos Votantes
+
+Este archivo contiene las funciones para realizar operaciones CRUD en la tabla "votantes" de la base de datos.
+
+### Funciones Disponibles
+
+### getVotantes()
+
+Obtiene todos los votantes desde la tabla "votantes" de la base de datos.
+
+**Parámetros:**
+
+Ninguno.
+
+**Retorna:**
+
+Un array con todos los votantes.
+
+### getIdVotante($rut)
+
+Obtiene el ID de un votante en base a su RUT.
+
+**Parámetros:**
+
+- `$rut`: RUT del votante a buscar.
+
+**Retorna:**
+
+El ID del votante encontrado.
+
+### getNombreVotante($rut)
+
+Obtiene el nombre de un votante en base a su RUT.
+
+**Parámetros:**
+
+- `$rut`: RUT del votante a buscar.
+
+**Retorna:**
+
+El nombre del votante encontrado, o una cadena vacía si no se encuentra.
+
+### insertarVotante($nombre, $alias, $rut, $email, $id_region, $id_comuna)
+
+Inserta un nuevo registro en la tabla "votantes" con los datos proporcionados.
+
+**Parámetros:**
+
+- `$nombre`: Nombre del votante a insertar.
+- `$alias`: Alias del votante a insertar.
+- `$rut`: RUT del votante a insertar.
+- `$email`: Email del votante a insertar.
+- `$id_region`: ID de la región del votante a insertar.
+- `$id_comuna`: ID de la comuna del votante a insertar.
+
+**Retorna:**
+
+El ID del votante insertado.
+
+### updateVotante($id, $nombre, $alias, $rut, $email, $id_region, $id_comuna)
+
+Actualiza los datos de un votante en la tabla "votantes" en base a su ID.
+
+**Parámetros:**
+
+- `$id`: ID del votante a actualizar.
+- `$nombre`: Nuevo nombre del votante.
+- `$alias`: Nuevo alias del votante.
+- `$rut`: Nuevo RUT del votante.
+- `$email`: Nuevo email del votante.
+- `$id_region`: Nuevo ID de la región del votante.
+- `$id_comuna`: Nuevo ID de la comuna del votante.
+
+**Retorna:**
+
+Nada.
+
+### deleteVotante($id)
+
+Elimina un votante de la tabla "votantes" en base a su ID.
+
+**Parámetros:**
+
+- `$id`: ID del votante a eliminar.
+
+**Retorna:**
+
+Nada.
+
+# Documentación de Funciones - Funciones de Validación
+
+## `validarNombre()`
+
+Valida si el campo de nombre tiene al menos dos palabras ingresadas.
+
+### Parámetros
+
+- Ninguno
+
+### Retorno
+
+- `true` si el campo de nombre tiene al menos dos palabras.
+- `false` si el campo de nombre no tiene al menos dos palabras.
+
+## `validarAlias()`
+
+Valida si el campo de alias cumple con los siguientes requisitos:
+
+- Tiene al menos 6 caracteres.
+- Contiene letras y números.
+
+### Parámetros
+
+- Ninguno
+
+### Retorno
+
+- `true` si el campo de alias cumple con los requisitos.
+- `false` si el campo de alias no cumple con los requisitos.
+
+## `calcularDigitoVerificador(rut)`
+
+Calcula el dígito verificador de un RUT (Rol Único Tributario) chileno.
+
+### Parámetros
+
+- `rut`: String que representa el RUT a calcular el dígito verificador.
+
+### Retorno
+
+- Un string que representa el dígito verificador del RUT.
+
+## `rutDuplicado(rut)`
+
+Verifica si un RUT (Rol Único Tributario) chileno ya está registrado en la base de datos.
+
+### Parámetros
+
+- `rut`: String que representa el RUT a verificar en la base de datos.
+
+### Retorno
+
+- `true` si el RUT ya está registrado.
+- `false` si el RUT no está registrado o hay un error en la consulta a la base de datos.
+
+## `validarRut()`
+
+Valida si el campo de RUT cumple con los siguientes requisitos:
+
+- Tiene un formato válido de RUT chileno.
+- No está vacío.
+- Tiene un dígito verificador correcto.
+- No está registrado en la base de datos.
+
+### Parámetros
+
+- Ninguno
+
+### Retorno
+
+- `true` si el campo de RUT cumple con los requisitos.
+- `false` si el campo de RUT no cumple con los requisitos.
+
+## `validarEmail()`
+
+Valida si el campo de email tiene un formato válido de dirección de correo electrónico.
+
+### Parámetros
+
+- Ninguno
+
+### Retorno
+
+- `true` si el campo de email tiene un formato válido.
+- `false` si el campo de email no tiene un formato válido.
+
+## `validarRegion()`
+
+Valida si se ha seleccionado una región en el formulario.
+
+### Parámetros
+
+- Ninguno
+
+### Retorno
+
+- `true` si se ha seleccionado una región.
+- `false` si no se ha seleccionado una región.
+
+## `validarComuna()`
+
+Valida si se ha seleccionado una comuna en el formulario.
+
+### Parámetros
+
+- Ninguno
+
+### Retorno
+
+- `true` si se ha seleccionado una comuna.
+- `false` si no se ha seleccionado una comuna.
+
+## `validarCandidato()`
+
+Valida si se ha seleccionado un candidato en el formulario.
+
+### Parámetros
+
+- Ninguno
+
+### Retorno
+
+- `true` si se ha seleccionado un candidato.
+- `false` si no se ha seleccionado un candidato.
+
+## `validarCheckbox()`
+
+Valida si se han seleccionado al menos dos opciones en los checkboxes del formulario.
+
+### Parámetros
+
+- Ninguno
+
+### Retorno
+
+- `true` si se han seleccionado al menos dos opciones.
+- `false` si no se han seleccionado al menos dos opciones.
