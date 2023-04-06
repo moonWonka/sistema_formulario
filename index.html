@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/reset.css" type="text/css" />
     <link rel="stylesheet" href="./css/index.css" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
     <title>Prueba Tecnica</title>
   </head>
   <body onload="generarRegiones()">
@@ -64,21 +71,33 @@
         <br />
 
         <label for="region">Región:</label>
-        <select name="region" id="region"></select>
+        <select
+          name="region"
+          id="region"
+          class="form-select form-select-sm"
+        ></select>
         <div class="validacion mostrar-verificacion" id="contenedor-region">
           <p class="mensaje-validacion" id="mensaje-region"></p>
         </div>
         <br />
 
         <label for="comuna">Comuna:</label>
-        <select name="comuna" id="comuna"></select>
+        <select
+          name="comuna"
+          id="comuna"
+          class="form-select form-select-sm"
+        ></select>
         <div class="validacion mostrar-verificacion" id="contenedor-comuna">
           <p class="mensaje-validacion" id="mensaje-comuna"></p>
         </div>
         <br />
 
         <label for="candidato">Candidato:</label>
-        <select name="candidato" id="candidato"></select>
+        <select
+          name="candidato"
+          id="candidato"
+          class="form-select form-select-sm"
+        ></select>
         <div class="validacion mostrar-verificacion" id="contenedor-candidato">
           <p class="mensaje-validacion" id="mensaje-candidato"></p>
         </div>
@@ -119,5 +138,10 @@
 
     <script src="./js/script.js"></script>
     <script src="./js/validaciones.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
