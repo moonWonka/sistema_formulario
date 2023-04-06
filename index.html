@@ -12,7 +12,6 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-
     <title>Prueba Tecnica</title>
   </head>
   <body onload="generarRegiones()">
@@ -24,115 +23,184 @@
 
     <main>
       <!-- onsubmit="return VL_formulario()" -->
-      <form id="formulario_voto">
-        <h2>Formulario de Votacion</h2>
+      <div class="container-sm form-container">
+        <form id="formulario_voto">
+          <h2>Formulario de Votacion</h2>
 
-        <label for="txt_nombre">Nombre y Apellido</label>
-        <input
-          name="nombre"
-          type="text"
-          id="txt_nombre"
-          onblur="validarNombre()"
-        />
-        <div class="validacion" id="contenedor-nombre">
-          <p class="mensaje-validacion" id="mensaje-nombre"></p>
-        </div>
-        <br />
+          <label for="txt_nombre" class="form-label">Nombre y Apellido</label>
+          <input
+            name="nombre"
+            type="text"
+            id="txt_nombre"
+            onblur="validarNombre()"
+            class="form-control form-control-sm"
+          />
+          <div class="validacion" id="contenedor-nombre">
+            <p
+              class="mensaje-validacion alert alert-danger"
+              id="mensaje-nombre"
+            ></p>
+          </div>
+          <br />
 
-        <label for="txt_alias">Alias</label>
-        <input
-          name="alias"
-          type="text"
-          id="txt_alias"
-          onblur="validarAlias()"
-        />
-        <div class="validacion" id="contenedor-alias">
-          <p class="mensaje-validacion" id="mensaje-alias"></p>
-        </div>
-        <br />
+          <label for="txt_alias" class="form-label">Alias</label>
+          <input
+            name="alias"
+            type="text"
+            id="txt_alias"
+            onblur="validarAlias()"
+            class="form-control form-control-sm"
+          />
+          <div class="validacion" id="contenedor-alias">
+            <p
+              class="mensaje-validacion alert alert-danger"
+              id="mensaje-alias"
+            ></p>
+          </div>
+          <br />
 
-        <label for="txt_rut">Rut</label>
-        <input name="rut" type="text" id="txt_rut" onblur="validarRut()" />
-        <div class="validacion mostrar-verificacion" id="contenedor-rut">
-          <p class="mensaje-validacion" id="mensaje-rut"></p>
-        </div>
-        <br />
+          <label for="txt_rut" class="form-label">Rut</label>
+          <input
+            name="rut"
+            type="text"
+            id="txt_rut"
+            onblur="validarRut()"
+            class="form-control form-control-sm"
+          />
+          <div class="validacion mostrar-verificacion" id="contenedor-rut">
+            <p
+              class="mensaje-validacion alert alert-danger"
+              id="mensaje-rut"
+            ></p>
+          </div>
+          <br />
 
-        <label for="txt_email">Email</label>
-        <input
-          name="email"
-          type="email"
-          id="txt_email"
-          onblur="validarEmail()"
-        />
-        <div class="validacion mostrar-verificacion" id="contenedor-email">
-          <p class="mensaje-validacion" id="mensaje-email"></p>
-        </div>
-        <br />
+          <label for="txt_email" class="form-label">Email</label>
+          <input
+            name="email"
+            type="email"
+            id="txt_email"
+            onblur="validarEmail()"
+            class="form-control form-control-sm"
+          />
+          <div class="validacion mostrar-verificacion" id="contenedor-email">
+            <p
+              class="mensaje-validacion alert alert-danger"
+              id="mensaje-email"
+            ></p>
+          </div>
+          <br />
 
-        <label for="region">Región:</label>
-        <select
-          name="region"
-          id="region"
-          class="form-select form-select-sm"
-        ></select>
-        <div class="validacion mostrar-verificacion" id="contenedor-region">
-          <p class="mensaje-validacion" id="mensaje-region"></p>
-        </div>
-        <br />
+          <label for="region">Región:</label>
+          <select
+            name="region"
+            id="region"
+            class="form-select form-select-sm"
+          ></select>
+          <div class="validacion mostrar-verificacion" id="contenedor-region">
+            <p
+              class="mensaje-validacion alert alert-danger"
+              id="mensaje-region"
+            ></p>
+          </div>
+          <br />
 
-        <label for="comuna">Comuna:</label>
-        <select
-          name="comuna"
-          id="comuna"
-          class="form-select form-select-sm"
-        ></select>
-        <div class="validacion mostrar-verificacion" id="contenedor-comuna">
-          <p class="mensaje-validacion" id="mensaje-comuna"></p>
-        </div>
-        <br />
+          <label for="comuna">Comuna:</label>
+          <select
+            name="comuna"
+            id="comuna"
+            class="form-select form-select-sm"
+          ></select>
+          <div class="validacion mostrar-verificacion" id="contenedor-comuna">
+            <p
+              class="mensaje-validacion alert alert-danger"
+              id="mensaje-comuna"
+            ></p>
+          </div>
+          <br />
 
-        <label for="candidato">Candidato:</label>
-        <select
-          name="candidato"
-          id="candidato"
-          class="form-select form-select-sm"
-        ></select>
-        <div class="validacion mostrar-verificacion" id="contenedor-candidato">
-          <p class="mensaje-validacion" id="mensaje-candidato"></p>
-        </div>
-        <br />
+          <label for="candidato">Candidato:</label>
+          <select
+            name="candidato"
+            id="candidato"
+            class="form-select form-select-sm"
+          ></select>
+          <div
+            class="validacion mostrar-verificacion"
+            id="contenedor-candidato"
+          >
+            <p
+              class="mensaje-validacion alert alert-danger"
+              id="mensaje-candidato"
+            ></p>
+          </div>
+          <br />
 
-        <label> Cómo se enteró de nosotros: </label>
+          <label class="form-label"> Cómo se enteró de nosotros: </label>
+          <br />
 
-        <input type="checkbox" id="web" name="como_se_entero[]" value="3" />
-        <label for="web">Web </label>
+          <!-- opcion web -->
+          <input
+            type="checkbox"
+            id="web"
+            name="como_se_entero[]"
+            value="3"
+            class="form-check-input redes"
+          />
+          <label for="web" class="form-check-label">Web </label>
 
-        <input type="checkbox" id="tv" name="como_se_entero[]" value="1" />
-        <label for="tv">TV</label>
+          <!-- opcion tv -->
+          <input
+            type="checkbox"
+            id="tv"
+            name="como_se_entero[]"
+            value="1"
+            class="form-check-input redes"
+          />
+          <label for="tv" class="form-check-label">TV</label>
 
-        <input
-          type="checkbox"
-          id="redes_sociales"
-          name="como_se_entero[]"
-          value="4"
-        />
-        <label for="redes_sociales">Redes Sociales </label>
+          <!-- opcion redes sociales -->
+          <input
+            type="checkbox"
+            id="redes_sociales"
+            name="como_se_entero[]"
+            value="4"
+            class="form-check-input redes"
+          />
+          <label for="redes_sociales" class="form-check-label"
+            >Redes Sociales
+          </label>
 
-        <input type="checkbox" id="amigo" name="como_se_entero[]" value="2" />
-        <label for="amigo">Amigo</label>
-        <div class="validacion mostrar-verificacion" id="contenedor-checkbox">
-          <p class="mensaje-validacion" id="mensaje-checkbox"></p>
-        </div>
-        <br />
+          <!-- opcion amigo -->
+          <input
+            type="checkbox"
+            id="amigo"
+            name="como_se_entero[]"
+            value="2"
+            class="form-check-input redes"
+          />
+          <label for="amigo" class="form-check-label">Amigo</label>
 
-        <button type="submit">Votar</button>
-      </form>
+          <!-- mesaje de validacion -->
+          <div class="validacion mostrar-verificacion" id="contenedor-checkbox">
+            <p
+              class="mensaje-validacion alert alert-danger"
+              id="mensaje-checkbox"
+            ></p>
+          </div>
+          <br />
 
-      <div>
-        <h1 id="mensaje">
-          <!-- .......autocpmplete response servidor.............. -->
-        </h1>
+          <div class="container-btn">
+            <button class="btn btn-outline-primary btn-lg" type="submit">
+              Votar
+            </button>
+          </div>
+          <div class="mostrar-response" id="contenedor-response">
+            <h1 id="mensaje" class="alert alert-primary">
+              <!-- .......autocpmplete response servidor.............. -->
+            </h1>
+          </div>
+        </form>
       </div>
     </main>
 

@@ -256,10 +256,17 @@ document
         .then((data) => {
           const mensaje = document.getElementById('mensaje')
           mensaje.innerHTML = data.mensaje
+          document
+            .getElementById('contenedor-response')
+            .classList.add('mostrar-response-mesanje')
         })
     } else {
       //si hay algún campo inválido
-      document.getElementById('mensaje').innerHTML = 'Hay campos inválidos'
+      const mensaje = document.getElementById('mensaje')
+      mensaje.innerHTML = 'Hay campos inválidos'
+      document
+        .getElementById('contenedor-response')
+        .classList.add('mostrar-response-mesanje')
     }
   })
 

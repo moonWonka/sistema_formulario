@@ -1,12 +1,58 @@
+h1,
+h2 {
+  text-align: center;
+}
+
+main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  margin-top: 0.5rem;
+  width: 50%;
+}
+
+form h2 {
+  margin-bottom: 2rem;
+}
+
+.container-btn {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redes {
+  margin: 1rem;
+}
+
+.mostrar-response h1 {
+  display: none;
+}
+
+.mostrar-response-mesanje h1 {
+  display: block;
+}
+
 .validacion {
   display: inline-block;
   margin-top: 5px;
-  background-color: orange;
 }
 
 .validacion p {
   display: none;
-  color: red;
   font-size: 14px;
 }
 
