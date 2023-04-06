@@ -3,7 +3,7 @@
 ## Índice
 
 1. Introducción
-2. Documentación de Funciones - Base de Datos Regiones (#Documentación de Funciones - Base de Datos Regiones)
+2. Documentación de Funciones - Base de Datos Regiones (#Tabla-Regiones)
 3. Documentación de Funciones - Base de Datos Candidatos
 4. Documentación de Funciones - Base de Datos Comunas
 5. Documentación de Funciones - Base de Datos Medios
@@ -14,7 +14,7 @@
 
 Este documento es una guía para la documentación del sistema de votación de la Prueba Técnica. Aquí se incluyen las funciones y operaciones disponibles en la base de datos "Regiones".
 
-## Documentación de Funciones - Base de Datos Regiones
+## Tabla Regiones
 
 Este archivo contiene las funciones para realizar operaciones CRUD en la tabla "regiones" de la base de datos.
 
