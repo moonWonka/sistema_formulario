@@ -1,0 +1,52 @@
+** repositorio proyecto sistema formulario**
+
+https://github.com/moonWonka/sistema_formulario                                        t-I         
+
+==============================================================
+Sistema de Votación - LEEME
+==============================================================
+
+Este archivo contiene información importante sobre cómo instalar y utilizar el Sistema de Votación.
+
+phpMyAdmin versión: 5.2.0
+Requisitos del sistema:
+
+    Servidor web Wamp (Apache).
+    PHP 8.0.26 o superior.
+    MySQL 8.0.31 o superior (u otra base de datos compatible).
+
+Servidor web: Wamp (Apache 2.4.54)
+Extensión PHP instalada: mysqli, curl, mbstring
+Versión de cliente de base de datos: libmysql - mysqlnd 8.0.26
+
+Pasos para Instalar:
+
+1. Clonar el repositorio del proyecto desde GitHub: [https://github.com/moonWonka/sistema_formulario]
+
+2. Crear una base de datos en tu servidor de MySQL (o la base de datos que estés utilizando) para el Sistema de Votación.
+
+3. Importar el archivo SQL de la base de datos incluido en la carpeta "SQL" del proyecto en la base de datos creada en el paso anterior.
+
+4. Configurar la conexión a la base de datos en el archivo "db_conexion.php" ubicado en la ruta "./php/db_conexion.php" del proyecto. 
+   Modificar las variables $host, $user, $password y $database con los valores correspondientes a tu entorno de desarrollo.
+
+5. Subir el contenido del proyecto al servidor web.
+
+6. Acceder al Sistema de Votación a través de un navegador web.
+
+Pasos para Utilizar:
+
+1. Completar el formulario de votación con los datos requeridos, asegurándose de cumplir con las validaciones de los campos.
+
+2. Seleccionar al menos dos opciones en el campo "Cómo se enteró de nosotros" marcando los checkboxes correspondientes.
+
+3. Enviar el formulario.
+
+Notas Adicionales:
+
+- Se ha implementado la validación del RUT en formato chileno, así como la validación de duplicación de votos por RUT en el backend del sistema.
+
+- Los datos de las regiones, comunas y candidatos son cargados desde la base de datos al cargar la página del formulario de votación.
+
+==============================================================
+                                                                                                                                                                                                                                                        t
