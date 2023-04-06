@@ -3,7 +3,7 @@
 ## Índice
 
 1. Introducción
-2. Documentación de Funciones - Base de Datos Regiones (#Tabla-Regiones)
+2. [Documentación de Funciones - Base de Datos Regiones](#Tabla-Regiones)
 3. Documentación de Funciones - Base de Datos Candidatos
 4. Documentación de Funciones - Base de Datos Comunas
 5. Documentación de Funciones - Base de Datos Medios
