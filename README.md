@@ -9,6 +9,7 @@
 5. [Documentación de Funciones - Base de Datos Medios](#Tabla-Medios)
 6. [Documentación de Funciones - Base de Datos Votantes](#Tabla-Votantes)
 7. [Documentación de Funciones - Funciones de Validación](#funciones-de-validación-js)
+8. [Dcomuentacion del Script en JavaScript](#descripción-del-script-en-js)
 
 ## Introducción
 
@@ -589,3 +590,23 @@ Valida si se han seleccionado al menos dos opciones en los checkboxes del formul
 
 - `true` si se han seleccionado al menos dos opciones.
 - `false` si no se han seleccionado al menos dos opciones.
+
+# Descripción del Script en JS
+
+El script en JavaScript proporcionado realiza operaciones CRUD en una aplicación web que utiliza una base de datos para gestionar regiones, comunas y candidatos. Las funciones en el script se describen de la siguiente manera:
+
+#### `generarRegiones()`
+
+Esta función realiza una solicitud fetch a una API en "http://localhost/prueba/php/regiones_api.php" para obtener todas las regiones desde la tabla "regiones" en la base de datos. Luego, crea opciones de selección en un elemento de formulario HTML con id "region", agregando las regiones obtenidas como opciones en el elemento select.
+
+#### `generarComunas(idRegion)`
+
+Esta función toma un parámetro idRegion y realiza una solicitud fetch a una API en "http://localhost/prueba/php/comunas_api.php/?id_region=" + idRegion para obtener todas las comunas asociadas a la región seleccionada. Luego, elimina las opciones anteriores en el elemento select con id "comuna" y agrega las comunas obtenidas como opciones en el elemento select.
+
+#### `generarCandidatos(idComuna)`
+
+Esta función toma un parámetro idComuna y realiza una solicitud fetch a una API en "http://localhost/prueba/php/candidatos_api.php/?id_comuna=" + idComuna para obtener todos los candidatos asociados a la comuna seleccionada. Luego, elimina las opciones anteriores en el elemento select con id "candidato" y agrega los candidatos obtenidos como opciones en el elemento select.
+
+#### Event Listeners
+
+El script también incluye dos event listeners que escuchan los cambios en los elementos select con id "region" y "comuna". Cuando se selecciona una región, se llama a la función generarComunas(idRegion) con el id de la región seleccionada para actualizar las comunas en el segundo select. Cuando se selecciona una comuna, se llama a la función generarCandidatos(idComuna) con el id de la comuna seleccionada para actualizar los candidatos en el tercer select.
