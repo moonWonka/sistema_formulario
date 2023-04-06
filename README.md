@@ -4,11 +4,11 @@
 
 1. Introducción
 2. [Documentación de Funciones - Base de Datos Regiones](#Tabla-Regiones)
-3. Documentación de Funciones - Base de Datos Candidatos
-4. Documentación de Funciones - Base de Datos Comunas
-5. Documentación de Funciones - Base de Datos Medios
-6. Documentación de Funciones - Base de Datos Votantes
-7. Documentación de Funciones - Funciones de Validación
+3. [Documentación de Funciones - Base de Datos Candidatos](#Tabla-Candidatos)
+4. [Documentación de Funciones - Base de Datos Comunas](#Tabla-Comunas)
+5. [Documentación de Funciones - Base de Datos Medios](#Tabla-Medios)
+6. [Documentación de Funciones - Base de Datos Votantes](#Tabla-Votantes)
+7. [Documentación de Funciones - Funciones de Validación](#funciones-de-validación-js)
 
 ## Introducción
 
@@ -93,7 +93,7 @@ Elimina una región de la tabla "regiones".
 
 Nada.
 
-# Documentación de Funciones - Base de Datos Candidatos
+## Tabla Candidatos
 
 Este archivo contiene las funciones para realizar operaciones CRUD en la tabla "candidatos" de la base de datos.
 
@@ -190,7 +190,7 @@ Retorna:
 
 Nada.
 
-## Documentación de Funciones - Base de Datos Comunas
+## Tabla Comunas
 
 Este archivo contiene las funciones para realizar operaciones CRUD en la tabla "comunas" de la base de datos.
 
@@ -283,7 +283,7 @@ Obtiene todas las comunas de una región específica por su nombre desde la tabl
 
 Un array con todas las comunas de la región especificada.
 
-## Documentación de Funciones - Base de Datos Medios
+## Tabla Medios
 
 Este archivo contiene las funciones para realizar operaciones CRUD en la tabla "medios" de la base de datos.
 
@@ -362,7 +362,7 @@ Elimina un medio de la tabla "medios" en base a su ID.
 
 Nada.
 
-## Documentación de Funciones - Base de Datos Votantes
+## Tabla Votantes
 
 Este archivo contiene las funciones para realizar operaciones CRUD en la tabla "votantes" de la base de datos.
 
@@ -451,7 +451,7 @@ Elimina un votante de la tabla "votantes" en base a su ID.
 
 Nada.
 
-# Documentación de Funciones - Funciones de Validación
+# Funciones de Validación JS
 
 ## `validarNombre()`
 
